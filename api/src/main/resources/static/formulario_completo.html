@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo - Todos os Tipos de Input</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .form-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+            padding: 2rem;
+            text-align: center;
+        }
+        .form-body {
+            padding: 2rem;
+        }
+        .section-title {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+        .input-demo {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .output-display {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: monospace;
+        }
+        .code-label {
+            font-family: 'Courier New', monospace;
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        fieldset {
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        legend {
+            color: #667eea;
+            font-weight: bold;
+            padding: 0 1rem;
+        }
+        .meter-container, .progress-container {
+            margin: 1rem 0;
+        }
+        .color-preview {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            display: inline-block;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h1><i class="bi bi-clipboard-data me-3"></i>Formulário Completo</h1>
+                        <p class="mb-0">Demonstração de Todos os Tipos de Input e Componentes</p>
+                    </div>
+                    
+                    <div class="form-body">
+                        <form id="formularioCompleto" novalidate>
+                            
+                            <!-- SEÇÃO 1: CAMPOS DE TEXTO -->
+                            <h3 class="section-title"><i class="bi bi-fonts me-2"></i>1. Campos de Texto</h3>
+                            
+                            <div class="input-demo">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputText" class="form-label">
+                                            <span class="code-label">type="text"</span> - Texto Simples
+                                        </label>
+                                        <input type="text" class="form-control" id="inputText" name="inputText" 
+                                               placeholder="Digite texto aqui" maxlength="50">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputEmail" class="form-label">
+                                            <span class="code-label">type="email"</span> - Email
+                                        </label>
+                                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" 
+                                               placeholder="seu@email.com" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputPassword" class="form-label">
+                                            <span class="code-label">type="password"</span> - Senha
+                                        </label>
+                                        <input type="password" class="form-control" id="inputPassword" name="inputPassword" 
+                                               placeholder="Digite sua senha" minlength="6">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputTel" class="form-label">
+                                            <span class="code-label">type="tel"</span> - Telefone
+                                        </label>
+                                        <input type="tel" class="form-control" id="inputTel" name="inputTel" 
+                                               placeholder="(11) 99999-9999" pattern="[0-9\s\(\)\-]+">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputUrl" class="form-label">
+                                            <span class="code-label">type="url"</span> - URL
+                                        </label>
+                                        <input type="url" class="form-control" id="inputUrl" name="inputUrl" 
+                                               placeholder="https://exemplo.com">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputSearch" class="form-label">
+                                            <span class="code-label">type="search"</span> - Busca
+                                        </label>
+                                        <input type="search" class="form-control" id="inputSearch" name="inputSearch" 
+                                               placeholder="Pesquisar...">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="textareaField" class="form-label">
+                                        <span class="code-label">&lt;textarea&gt;</span> - Texto Multilinha
+                                    </label>
+                                    <textarea class="form-control" id="textareaField" name="textareaField" 
+                                              rows="3" placeholder="Digite seu comentário aqui..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- SEÇÃO 2: CAMPOS NUMÉRICOS E DATA/HORA -->
+                            <h3 class="section-title"><i class="bi bi-123 me-2"></i>2. Campos Numéricos e Data/Hora</h3>
+                            
+                            <div class="input-demo">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputNumber" class="form-label">
+                                            <span class="code-label">type="number"</span> - Número
+                                        </label>
+                                        <input type="number" class="form-control" id="inputNumber" name="inputNumber" 
+                                               min="0" max="100" step="1" placeholder="0-100" 
+                                               onchange="updateOutput()">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputRange" class="form-label">
+                                            <span class="code-label">type="range"</span> - Slider
+                                            <span id="rangeValue" class="badge bg-primary">50</span>
+                                        </label>
+                                        <input type="range" class="form-range" id="inputRange" name="inputRange" 
+                                               min="0" max="100" value="50" 
+                                               oninput="document.getElementById('rangeValue').textContent = this.value; updateOutput();">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="inputDate" class="form-label">
+                                            <span class="code-label">type="date"</span> - Data
+                                        </label>
+                                        <input type="date" class="form-control" id="inputDate" name="inputDate" 
+                                               min="1900-01-01" max="2030-12-31">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="inputTime" class="form-label">
+                                            <span class="code-label">type="time"</span> - Hora
+                                        </label>
+                                        <input type="time" class="form-control" id="inputTime" name="inputTime" 
+                                               min="09:00" max="18:00">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="inputDatetimeLocal" class="form-label">
+                                            <span class="code-label">type="datetime-local"</span> - Data/Hora
+                                        </label>
+                                        <input type="datetime-local" class="form-control" id="inputDatetimeLocal" name="inputDatetimeLocal">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputMonth" class="form-label">
+                                            <span class="code-label">type="month"</span> - Mês/Ano
+                                        </label>
+                                        <input type="month" class="form-control" id="inputMonth" name="inputMonth" 
+                                               min="2020-01">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputWeek" class="form-label">
+                                            <span class="code-label">type="week"</span> - Semana
+                                        </label>
+                                        <input type="week" class="form-control" id="inputWeek" name="inputWeek">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SEÇÃO 3: CAMPOS DE SELEÇÃO -->
+                            <h3 class="section-title"><i class="bi bi-check-circle me-2"></i>3. Campos de Seleção</h3>
+                            
+                            <div class="input-demo">
+                                <!-- Radio Buttons -->
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        <span class="code-label">type="radio"</span> - Botões de Opção
+                                    </label>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="genero" value="masculino" id="radioMasc">
+                                            <label class="form-check-label" for="radioMasc">Masculino</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="genero" value="feminino" id="radioFem">
+                                            <label class="form-check-label" for="radioFem">Feminino</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="genero" value="outro" id="radioOutro">
+                                            <label class="form-check-label" for="radioOutro">Outro</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Checkboxes -->
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        <span class="code-label">type="checkbox"</span> - Caixas de Seleção
+                                    </label>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="interesses" value="programacao" id="checkProg">
+                                            <label class="form-check-label" for="checkProg">Programação</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="interesses" value="design" id="checkDesign">
+                                            <label class="form-check-label" for="checkDesign">Design</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="interesses" value="marketing" id="checkMkt">
+                                            <label class="form-check-label" for="checkMkt">Marketing</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="interesses" value="vendas" id="checkVendas">
+                                            <label class="form-check-label" for="checkVendas">Vendas</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Select Simples -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="selectSimples" class="form-label">
+                                            <span class="code-label">&lt;select&gt;</span> - Lista Suspensa
+                                        </label>
+                                        <select class="form-select" id="selectSimples" name="selectSimples" required>
+                                            <option value="">Selecione um país</option>
+                                            <option value="br">🇧🇷 Brasil</option>
+                                            <option value="pt">🇵🇹 Portugal</option>
+                                            <option value="us">🇺🇸 Estados Unidos</option>
+                                            <option value="ca">🇨🇦 Canadá</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Select Múltiplo -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="selectMultiplo" class="form-label">
+                                            <span class="code-label">multiple</span> - Seleção Múltipla
+                                        </label>
+                                        <select class="form-select" id="selectMultiplo" name="selectMultiplo" multiple size="4">
+                                            <option value="html">HTML</option>
+                                            <option value="css">CSS</option>
+                                            <option value="js">JavaScript</option>
+                                            <option value="php">PHP</option>
+                                            <option value="python">Python</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Select com OptGroup -->
+                                <div class="mb-3">
+                                    <label for="selectOptGroup" class="form-label">
+                                        <span class="code-label">&lt;optgroup&gt;</span> - Seleção com Grupos
+                                    </label>
+                                    <select class="form-select" id="selectOptGroup" name="selectOptGroup">
+                                        <option value="">Selecione um veículo</option>
+                                        <optgroup label="🚗 Carros">
+                                            <option value="sedan">Sedan</option>
+                                            <option value="suv">SUV</option>
+                                            <option value="hatch">Hatchback</option>
+                                        </optgroup>
+                                        <optgroup label="🏍️ Motos">
+                                            <option value="sport">Esportiva</option>
+                                            <option value="cruiser">Cruiser</option>
+                                            <option value="scooter">Scooter</option>
+                                        </optgroup>
+                                        <optgroup label="🚲 Outros">
+                                            <option value="bike">Bicicleta</option>
+                                            <option value="skate">Skate</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- SEÇÃO 4: CAMPOS DE ARQUIVO E ESPECIAIS -->
+                            <h3 class="section-title"><i class="bi bi-file-earmark me-2"></i>4. Campos de Arquivo e Especiais</h3>
+                            
+                            <div class="input-demo">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputFile" class="form-label">
+                                            <span class="code-label">type="file"</span> - Arquivo Único
+                                        </label>
+                                        <input type="file" class="form-control" id="inputFile" name="inputFile" 
+                                               accept=".pdf,.doc,.docx,.txt">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputFileMultiple" class="form-label">
+                                            <span class="code-label">multiple</span> - Múltiplos Arquivos
+                                        </label>
+                                        <input type="file" class="form-control" id="inputFileMultiple" name="inputFileMultiple" 
+                                               multiple accept="image/*">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputColor" class="form-label">
+                                            <span class="code-label">type="color"</span> - Seletor de Cor
+                                        </label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="color" class="form-control form-control-color" id="inputColor" 
+                                                   name="inputColor" value="#667eea" title="Escolha uma cor"
+                                                   onchange="updateColorPreview(this.value)">
+                                            <div id="colorPreview" class="color-preview ms-2" style="background-color: #667eea;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputHidden" class="form-label">
+                                            <span class="code-label">type="hidden"</span> - Campo Oculto
+                                        </label>
+                                        <input type="hidden" id="inputHidden" name="inputHidden" value="valor-secreto">
+                                        <div class="alert alert-info mb-0">
+                                            <small><i class="bi bi-info-circle me-1"></i>Campo oculto com valor: "valor-secreto"</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SEÇÃO 5: DATALIST -->
+                            <h3 class="section-title"><i class="bi bi-list-ul me-2"></i>5. Lista de Sugestões</h3>
+                            
+                            <div class="input-demo">
+                                <div class="mb-3">
+                                    <label for="inputDatalist" class="form-label">
+                                        <span class="code-label">&lt;datalist&gt;</span> - Campo com Sugestões
+                                    </label>
+                                    <input class="form-control" list="cidades" id="inputDatalist" name="inputDatalist" 
+                                           placeholder="Digite ou selecione uma cidade">
+                                    <datalist id="cidades">
+                                        <option value="São Paulo">
+                                        <option value="Rio de Janeiro">
+                                        <option value="Belo Horizonte">
+                                        <option value="Salvador">
+                                        <option value="Brasília">
+                                        <option value="Fortaleza">
+                                        <option value="Recife">
+                                        <option value="Porto Alegre">
+                                    </datalist>
+                                </div>
+                            </div>
+
+                            <!-- SEÇÃO 6: FIELDSET E LEGEND -->
+                            <h3 class="section-title"><i class="bi bi-collection me-2"></i>6. Agrupamento de Campos</h3>
+                            
+                            <fieldset>
+                                <legend><i class="bi bi-person-badge me-2"></i>Informações Profissionais</legend>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="empresa" class="form-label">Empresa</label>
+                                        <input type="text" class="form-control" id="empresa" name="empresa" 
+                                               placeholder="Nome da empresa">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="cargo" class="form-label">Cargo</label>
+                                        <input type="text" class="form-control" id="cargo" name="cargo" 
+                                               placeholder="Seu cargo atual">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="experiencia" class="form-label">Anos de Experiência</label>
+                                    <input type="number" class="form-control" id="experiencia" name="experiencia" 
+                                           min="0" max="50" placeholder="0-50 anos">
+                                </div>
+                            </fieldset>
+
+                            <!-- SEÇÃO 7: ELEMENTOS DE SAÍDA E MEDIÇÃO -->
+                            <h3 class="section-title"><i class="bi bi-speedometer2 me-2"></i>7. Elementos de Saída e Medição</h3>
+                            
+                            <div class="input-demo">
+                                <!-- Output -->
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        <span class="code-label">&lt;output&gt;</span> - Resultado de Cálculo
+                                    </label>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <span>Número + Slider = </span>
+                                        <output name="resultado" for="inputNumber inputRange" id="outputCalculo" class="badge bg-success fs-6">50</output>
+                                    </div>
+                                </div>
+                                
+                                <!-- Progress -->
+                                <div class="progress-container mb-3">
+                                    <label class="form-label">
+                                        <span class="code-label">&lt;progress&gt;</span> - Barra de Progresso
+                                    </label>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <progress value="70" max="100" class="flex-grow-1" style="height: 20px;">70%</progress>
+                                        <span class="badge bg-info">70%</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Meter -->
+                                <div class="meter-container mb-3">
+                                    <label class="form-label">
+                                        <span class="code-label">&lt;meter&gt;</span> - Medidor/Gauge
+                                    </label>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <meter value="8" min="0" max="10" high="8" low="3" class="flex-grow-1" style="height: 20px;">8 de 10</meter>
+                                        <span class="badge bg-warning">8/10</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SEÇÃO 8: BOTÕES -->
+                            <h3 class="section-title"><i class="bi bi-mouse me-2"></i>8. Tipos de Botões</h3>
+                            
+                            <div class="input-demo">
+                                <div class="d-flex flex-wrap gap-3 mb-3">
+                                    <input type="submit" class="btn btn-primary" value="Submit Button">
+                                    <input type="reset" class="btn btn-secondary" value="Reset Button">
+                                    <input type="button" class="btn btn-info" value="Generic Button" onclick="alert('Botão genérico clicado!')">
+                                    <button type="button" class="btn btn-success">
+                                        <i class="bi bi-check-lg me-1"></i>Button Element
+                                    </button>
+                                    <input type="image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Crect width='100' height='30' fill='%23667eea'/%3E%3Ctext x='50' y='20' text-anchor='middle' fill='white' font-family='Arial' font-size='12'%3EImage Button%3C/text%3E%3C/svg%3E" alt="Image Button" width="100" height="30">
+                                </div>
+                            </div>
+
+                            <!-- SEÇÃO 9: VALIDAÇÃO E ATRIBUTOS -->
+                            <h3 class="section-title"><i class="bi bi-shield-check me-2"></i>9. Exemplos de Validação</h3>
+                            
+                            <div class="input-demo">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="campoObrigatorio" class="form-label">
+                                            Campo Obrigatório <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="campoObrigatorio" name="campoObrigatorio" 
+                                               required placeholder="Este campo é obrigatório">
+                                        <div class="invalid-feedback">Por favor, preencha este campo.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="campoPattern" class="form-label">Campo com Pattern (apenas números)</label>
+                                        <input type="text" class="form-control" id="campoPattern" name="campoPattern" 
+                                               pattern="[0-9]+" placeholder="Digite apenas números">
+                                        <div class="invalid-feedback">Digite apenas números.</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="campoReadonly" class="form-label">Campo Somente Leitura</label>
+                                        <input type="text" class="form-control" id="campoReadonly" name="campoReadonly" 
+                                               readonly value="Este campo é apenas leitura">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="campoDisabled" class="form-label">Campo Desabilitado</label>
+                                        <input type="text" class="form-control" id="campoDisabled" name="campoDisabled" 
+                                               disabled value="Este campo está desabilitado">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="termos" name="termos" required>
+                                        <label class="form-check-label" for="termos">
+                                            Eu aceito os termos e condições <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="invalid-feedback">Você deve aceitar os termos.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ÁREA DE RESULTADO -->
+                            <div class="output-display">
+                                <h5><i class="bi bi-code-slash me-2"></i>Dados do Formulário (JSON):</h5>
+                                <pre id="dadosFormulario">Os dados aparecerão aqui quando você preencher os campos...</pre>
+                            </div>
+
+                            <!-- BOTÕES FINAIS -->
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                                <button type="button" class="btn btn-outline-secondary" onclick="preencherExemplo()">
+                                    <i class="bi bi-magic me-1">

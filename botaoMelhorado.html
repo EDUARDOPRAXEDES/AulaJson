@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Boas-vindas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #0077cc;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+            transform: scale(1.05);
+        }
+
+        .caixa {
+            width: 150px;
+            height: 150px;
+            background-color: #00ced1;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .caixa:hover {
+            transform: scale(1.05);
+            background-color: #008b8b;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="mostrarAlerta(' Vai Corintians!!!')">Clique Aqui!</button>
+
+    <div class="caixa" onclick="mensagem()">
+        Praxedes
+    </div>
+
+    <script>
+        function mostrarAlerta(texto) {
+            alert("Boa Noite, Turma!" + texto);
+        }
+
+        function mensagem() {
+            alert("Voltar para Interdata!");
+        }
+    </script>
+    
+</body>
+</html>
